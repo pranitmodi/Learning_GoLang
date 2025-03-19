@@ -15,12 +15,13 @@ func main() {
 
 	fmt.Println("List of my Todos")
 	//fmt.Println(taskItems)
+	printTasks(taskItems)
 
-	//if you don't want to use the index, just replace it with an underscore
-	for index, task := range taskItems {
-		//fmt.Println(index+1, ": ", task) //this adds extra spaces
-		fmt.Printf("%d: %s\n", index+1, task)
-	}
+	// Adding a new Task
+	fmt.Println()
+	fmt.Println("Tasks after adding a new task:")
+	taskItems = addTask(taskItems, "Add a new task")
+	printTasks(taskItems)
 
 	fmt.Println()
 	fmt.Println("Tutorials")
@@ -34,4 +35,16 @@ func main() {
 	fmt.Println()
 	fmt.Println("My Project")
 	fmt.Println(fullGolang)
+}
+
+func printTasks(taskItems []string) {
+	//if you don't want to use the index, just replace it with an underscore
+	for index, task := range taskItems {
+		//fmt.Println(index+1, ": ", task) //this adds extra spaces
+		fmt.Printf("%d: %s\n", index+1, task)
+	}
+}
+
+func addTask(taskItems []string, newTask string) []string {
+	return append(taskItems, newTask)
 }

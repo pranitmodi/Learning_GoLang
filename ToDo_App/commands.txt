@@ -1,0 +1,4 @@
+go mod init <directory_name>
+go run .
+
+*Only one main()
